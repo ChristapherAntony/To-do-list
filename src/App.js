@@ -14,7 +14,7 @@ function App() {
         </div>
         <div className="subHeading">
           <br />
-          <h2>Whoop, it's Wednesday 🌝 ☕ </h2>
+          <h2>Whoop, it's {(new Date()).toLocaleDateString()} 🌝 ☕ </h2>
         </div>
         <div className="input">
           <input value={toDo} onChange={(e) => setToDo(e.target.value)} type="text" placeholder="🖊️ Add item..." />
