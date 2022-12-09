@@ -14,11 +14,11 @@ function App() {
         </div>
         <div className="subHeading">
           <br />
-          <h2>Whoop, it's {(new Date()).toLocaleDateString()} 🌝 ☕ </h2>
+          <h2>Whoop, it's {(new Date()).toLocaleDateString()} 🌝 ☕ </h2><button  onClick={()=>{setToDos([])}}>clear</button>
         </div>
         <div className="input">
           <input value={toDo} onChange={(e) => setToDo(e.target.value)} type="text" placeholder="🖊️ Add item..." />
-          <i onClick={() => setToDos([...toDos, { id: Date.now(), text: toDo, status: false, del: false }])} className="fas fa-plus"></i>
+          <i onClick={() => {setToDos([...toDos, { id: Date.now(), text: toDo, status: false, del: false }]);setToDo("")}} className="fas fa-plus"></i>
         </div>
         <div className="todos">
           {toDos.map((obj) => {
@@ -63,11 +63,11 @@ function App() {
 
       </div>
       {/* Completed tasks */}
+      
       <div>
-
         <div className="subHeading">
           <br />
-          <h2 style={{ backgroundColor: "green" }}>Completed </h2>
+          <h2 style={{ backgroundColor: "green" }}>Completed </h2> 
         </div>
         <div className="todos">
           {toDos.map((obj) => {
